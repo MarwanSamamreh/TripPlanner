@@ -1,0 +1,224 @@
+/* Define root variables */
+:root {
+  --font-family: Arial, sans-serif;
+  --background-color: #0078bd;
+  --background-repeat: no-repeat;
+  --main-color: #28a745;
+  --main-color-hover: #218838;
+  --text-color-light: #ffffff;
+  --text-color-dark: #333333;
+  --text-color-muted: #666666;
+  --border-color-light: #ccc;
+  --border-color-subtle: #ddd;
+  --card-background-color: #ffffff;
+  --border-radius: 10px;
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --remove-btn-color: #dc3545;
+  --remove-btn-hover-color: #c82333;
+  --font-size-large: 2rem;
+  --font-size-medium: 1.5rem;
+  --font-size-small: 1rem;
+  --font-size-xsmall: 0.75rem;
+}
+
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 20px;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 90%;
+  max-width: 700px;
+}
+
+h1 {
+  font-size: var(--font-size-large);
+  color: var(--text-color-light);
+  margin-bottom: 15px;
+}
+
+header p {
+  font-size: var(--font-size-medium);
+  color: var(--text-color-light);
+}
+
+main {
+  width: 100%;
+  max-width: 700px;
+  background-color: var(--card-background-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-top: 10px;
+  font-size: var(--font-size-small);
+  color: #555;
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid var(--border-color-light);
+  border-radius: 5px;
+  font-size: var(--font-size-small);
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  color: var(--text-color-light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--main-color-hover);
+}
+
+#results-section {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.result-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color-subtle); /* Light border color for a subtle look */
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  padding: 15px; /* Increased padding for better spacing */
+  background-color: var(--card-background-color);
+  box-shadow: var(--card-shadow); /* Shadow effect for a card-like appearance */
+  position: relative; /* To position the remove button absolutely */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.result-image {
+  max-width: 150px;
+  border-radius: 5px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.result-info {
+  flex: 1;
+}
+
+.result-info h2 {
+  margin: 0;
+  font-size: var(--font-size-medium);
+  color: var(--text-color-dark); /* Updated for better contrast */
+}
+
+.result-info p {
+  margin: 5px 0;
+  color: var(--text-color-muted); /* Updated for better readability */
+}
+
+/* Style for remove button */
+.remove-card-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--remove-btn-color);
+  color: var(--text-color-light);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: var(--font-size-xsmall);
+  transition: background-color 0.3s;
+}
+
+.remove-card-btn:hover {
+  background-color: var(--remove-btn-hover-color);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header {
+    margin-bottom: 10px;
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .result-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .result-image {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  label {
+    font-size: 0.75rem;
+  }
+
+  input[type="text"],
+  button[type="submit"] {
+    font-size: 0.75rem;
+  }
+
+  .result-info h2 {
+    font-size: 1.25rem;
+  }
+
+  .result-info p {
+    font-size: 0.75rem;
+  }
+}
