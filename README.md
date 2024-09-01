@@ -1,5 +1,6 @@
 
 # Trip Planner
+# Node Version: v20.10.0
 Overview
 Trip Planner is a web application that allows users to plan their trips by interacting with three different APIs to provide detailed information about the destination, including weather, images, and more. This project demonstrates the use of various modern web development technologies such as DOM manipulation, API handling, Webpack, service workers, and testing with Jest.
 
