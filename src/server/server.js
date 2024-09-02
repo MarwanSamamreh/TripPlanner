@@ -13,16 +13,16 @@ app.use(express.static(path.join(__dirname, "../../dist")));
 
 app.get("/api/config", (req, res) => {
   res.json({
-    geonamesUsername: process.env.Geonames_USERNAME,
-    weatherbitApiKey: process.env.Weatherbit_API_KEY,
-    pixabayApiKey: process.env.Pixabay_API_KEY,
+    geonamesUsername: process.env.GEONAMES_USERNAME,
+    weatherbitApiKey: process.env.WEATHERBIT_API_KEY,
+    pixabayApiKey: process.env.PIXABAY_API_KEY,
   });
 });
 
 const WEATHERBIT_API_URL = "https://api.weatherbit.io/v2.0/forecast/daily";
 const PIXABAY_API_URL = "https://pixabay.com/api/";
 const GEONAMES_API_URL = "http://api.geonames.org/searchJSON";
-const geonamesUsername = process.env.Geonames_USERNAME; // Use environment variable
+const geonamesUsername = process.env.GEONAMES_USERNAME; // Use environment variable
 
 // Serve index.html on the root route
 app.get("/", (req, res) => {
