@@ -37,9 +37,9 @@ npm install
 Create a .env file in the root directory and add your API keys:
 
 ```
-GEONAMES_API_KEY=your_geonames_api_key
-WEATHERBIT_API_KEY=your_weatherbit_api_key
-PIXABAY_API_KEY=your_pixabay_api_key
+WEATHERBIT_API_KEY=
+PIXABAY_API_KEY=
+GEONAMES_USERNAME=
 ```
 ### 4. Build the project:
 For production:
