@@ -1,8 +1,8 @@
 const path = require("path");
-const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: "./src/client/index.js",
@@ -49,7 +49,14 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: 3001,
+    port: 3000,
     allowedHosts: "all",
+    hot: true,
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    devMiddleware: {
+      publicPath: "/",
+    },
   },
 };
