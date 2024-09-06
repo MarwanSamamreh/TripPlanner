@@ -21,8 +21,7 @@ app.get("/api/config", (req, res) => {
 
 const WEATHERBIT_API_URL = "https://api.weatherbit.io/v2.0/forecast/daily";
 const PIXABAY_API_URL = "https://pixabay.com/api/";
-const GEONAMES_API_URL = "http://api.geonames.org/searchJSON";
-const geonamesUsername = process.env.GEONAMES_USERNAME; // Use environment variable
+const GEONAMES_API_URL = "https://api.geonames.org/searchJSON";
 
 // Serve index.html on the root route
 app.get("/", (req, res) => {
@@ -39,7 +38,7 @@ app.get("/weather", async (req, res) => {
       .json({ error: "Latitude and longitude are required" });
   }
 
-  const apiKey = process.env.Weatherbit_API_KEY;
+  const apiKey = process.env.WEATHERBIT_API_KEY; // Fix: should be WEATHERBIT_API_KEY
   const apiUrl = `${WEATHERBIT_API_URL}?lat=${lat}&lon=${lon}&key=${apiKey}`;
 
   try {
@@ -60,7 +59,7 @@ app.get("/image", async (req, res) => {
     return res.status(400).json({ error: "Place is required" });
   }
 
-  const apiKey = process.env.Pixabay_API_KEY;
+  const apiKey = process.env.PIXABAY_API_KEY; // Fix: should be PIXABAY_API_KEY
   const apiUrl = `${PIXABAY_API_URL}?key=${apiKey}&q=${encodeURIComponent(
     place
   )}&image_type=photo`;
@@ -83,6 +82,7 @@ app.get("/geo", async (req, res) => {
     return res.status(400).json({ error: "Place is required" });
   }
 
+  const geonamesUsername = process.env.GEONAMES_USERNAME; // Use environment variable
   const apiUrl = `${GEONAMES_API_URL}?q=${encodeURIComponent(
     place
   )}&maxRows=1&username=${geonamesUsername}`;
