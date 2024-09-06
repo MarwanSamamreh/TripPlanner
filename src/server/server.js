@@ -38,7 +38,7 @@ app.get("/weather", async (req, res) => {
       .json({ error: "Latitude and longitude are required" });
   }
 
-  const apiKey = process.env.WEATHERBIT_API_KEY; 
+  const apiKey = process.env.WEATHERBIT_API_KEY; // Fix: should be WEATHERBIT_API_KEY
   const apiUrl = `${WEATHERBIT_API_URL}?lat=${lat}&lon=${lon}&key=${apiKey}`;
 
   try {
