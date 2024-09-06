@@ -1,4 +1,4 @@
-import { checkDateFormat } from "../src/client/DateChecker.js";
+import { checkDateFormat } from "../src/client/js/DateChecker.js";
 
 describe("checkDateFormat", () => {
   it("should return true for valid date formats", () => {
@@ -23,5 +23,10 @@ describe("checkDateFormat", () => {
   it("should return false for an empty string", () => {
     const emptyDate = ""; // Empty date string
     expect(checkDateFormat(emptyDate)).toBe(false);
+  });
+
+  it("should return false for null or undefined input", () => {
+    expect(checkDateFormat(null)).toBe(false);
+    expect(checkDateFormat(undefined)).toBe(false);
   });
 });
