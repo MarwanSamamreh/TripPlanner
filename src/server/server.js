@@ -59,7 +59,7 @@ app.get("/image", async (req, res) => {
     return res.status(400).json({ error: "Place is required" });
   }
 
-  const apiKey = process.env.PIXABAY_API_KEY; // Fix: should be PIXABAY_API_KEY
+  const apiKey = process.env.PIXABAY_API_KEY; 
   const apiUrl = `${PIXABAY_API_URL}?key=${apiKey}&q=${encodeURIComponent(
     place
   )}&image_type=photo`;
@@ -82,7 +82,7 @@ app.get("/geo", async (req, res) => {
     return res.status(400).json({ error: "Place is required" });
   }
 
-  const geonamesUsername = process.env.GEONAMES_USERNAME; // Use environment variable
+  const geonamesUsername = process.env.GEONAMES_USERNAME;
   const apiUrl = `${GEONAMES_API_URL}?q=${encodeURIComponent(
     place
   )}&maxRows=1&username=${geonamesUsername}`;
